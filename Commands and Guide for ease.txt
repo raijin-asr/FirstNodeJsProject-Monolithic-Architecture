@@ -3,4 +3,6 @@
 ----
 2. create app.js as main entry file
 -----
-3. 
+3. npm i express or npm install express
+--
+4. 
