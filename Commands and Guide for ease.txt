@@ -4,5 +4,9 @@
 2. create app.js as main entry file
 -----
 3. npm i express or npm install express
+    version: 4.19.2(4 is Major, 19 is Minor and 2 is Patch)=> semantic version: semver
 --
-4. 
+4. node app.get, app.listen
+    node --watch app.js for automatic restart app.js changes
+-----
+5. 
