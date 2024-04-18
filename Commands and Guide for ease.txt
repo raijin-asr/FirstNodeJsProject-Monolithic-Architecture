@@ -7,6 +7,9 @@
     version: 4.19.2(4 is Major, 19 is Minor and 2 is Patch)=> semantic version: semver
 --
 4. node app.get, app.listen
-    node --watch app.js for automatic restart app.js changes
+    node --watch app.js for automatic restart app.js changes 
+    or npm install nodemon --save-dev: saved in package.json in devDependencies for local development localhost
+    in package.json, script part start: nodemon app.js and run command npm start instead and write any name in place of start eg.ameer, and npm run ameer
 -----
-5. 
+5. rest: app.get('/createblog')
+    but resful api : app.get('/blog/create'): more organized route
