@@ -4,6 +4,7 @@ const app= express() //invoke
 
 //const express= require("express")() //in single line
 
+require("./model/index")
 app.set('view engine','ejs') //set ui render to ejs
 
 //get part

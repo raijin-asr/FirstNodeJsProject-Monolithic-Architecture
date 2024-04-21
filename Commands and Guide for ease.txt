@@ -24,4 +24,14 @@
     -- pass data from res.render as variable or const
    --and push to git through terminal as: git add., git commit -m 'message' and git push
 ------------------
-7.  
+7.  created new ejs page like navbar, footer, creteblog, editblog
+    --UI part complete
+ -----
+ 8. Model, database connection
+    --installed zampp, setup phpmyadmin table, database
+    --ORM(Object Relational Mapping) eg. user.create()
+    --npm install sequelize mysql2 (2 package)
+    --created model and config folder for db connection
+    --db code in index.js and dbConfig.js
+    --require index.js in app.js
+    
