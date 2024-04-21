@@ -31,12 +31,14 @@ app.get('/blog',(req,res)=>{
 
 //restful
 app.get('/blog/create',(req,res)=>{
-    res.send("Create blog with Ameer")
+    // res.send("Create blog with Ameer")
+    res.render("createblog")
 })
 
 //restful
 app.get('/blog/edit',(req,res)=>{
-    res.send("Edit blog with Ameer")
+    // res.send("Edit blog with Ameer")
+    res.render("editblog")
 })
 
 app.listen(3000,()=>{

@@ -20,5 +20,8 @@
     --make new home.ejs file for html rendering
     --and make other required file such as blog.ejs, about.ejs
     --<h1>No sum in Html: 10+10</h1>
-    --<h1>Dynamic in ejs: <%- 10+10%></h1>
+    --<h1>Dynamic in ejs: <%- 10+10%></h1> <%=%>
     -- pass data from res.render as variable or const
+   --and push to git through terminal as: git add., git commit -m 'message' and git push
+------------------
+7.  
