@@ -1,9 +1,8 @@
 const dbConfig = require("../config/dbConfig");
-const { Sequelize, DataTypes } = require("sequelize");
-
+const { Sequelize, DataTypes } = require("sequelize"); //sequelize used for ORM, DataTypes and Sequelize are tools of sequelize installed
 
 // connecting with db in config
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, { //instantiation
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: false,
@@ -16,7 +15,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 });
 
 sequelize
-  .authenticate()
+  .authenticate() //if connected else error
   .then(() => {
     console.log("CONNECTED!!");
   })
@@ -24,14 +23,14 @@ sequelize
     console.log("Error" + err);
   });
 
-const db = {};
+const db = {}; //db object
 
-db.blogs = require('./blogModel')(sequelize,DataTypes)
-db.users = require('./userModel')(sequelize,DataTypes)
+db.blogs = require('./blogModel')(sequelize,DataTypes) //importing blogModel
+db.users = require('./userModel')(sequelize,DataTypes) //calling arrow function
 
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-db.sequelize.sync({ force: false}).then(() => {
+db.Sequelize = Sequelize; //class with capital S
+db.sequelize = sequelize; //object with lower case s
+db.sequelize.sync({ force: false}).then(() => { //for migration purpose
   console.log("YES, re-sync done");
 });
 
