@@ -27,11 +27,20 @@
 7.  created new ejs page like navbar, footer, creteblog, editblog
     --UI part complete
  -----
- 8. Model, database connection
+8. Model, database connection
     --installed zampp, setup phpmyadmin table, database
     --ORM(Object Relational Mapping) eg. user.create()
     --npm install sequelize mysql2 (2 package)
     --created model and config folder for db connection
     --db code in index.js and dbConfig.js
     --require index.js in app.js
+-----------
+9. app.post() method
+    --save post form data to db
+    --console.log(req.body) to see data in console, shows undefined
+    --app.use(express.urlencoded({extended: true})) //this shows posted data in console instead of undefined: for monolithic and cs architecture
+    --app.use(express.json())= understand data if sent or posted and for client server architecture
+    --sending blogs data to db using blogs.create operation
+    --using await in blogs.create, and write async in app.post to enhance delay or operation that takes time
+    --
     
