@@ -42,5 +42,24 @@
     --app.use(express.json())= understand data if sent or posted and for client server architecture
     --sending blogs data to db using blogs.create operation
     --using await in blogs.create, and write async in app.post to enhance delay or operation that takes time
-    --
-    
+-----------
+10. uploading file in nodejs as it only understand text, not file
+    --content-type:application/json(nodejs understands it for text)
+    --content-type: multipart/form-data(for file, image, video)
+    --use Multer package (newer easier less line code package)
+    --busboy was old package used for image, video with more code
+    --npm i multer as middleware
+    --create new folder named middleware and new file "MulterConfig.js" and reuse it anywehere 
+    --create storage folder to store file handled by cb(callback) function
+    --use upload.single for single file and upload.array for multiple file
+    --//console.log(req.body) //to check in console
+    --console.log(req.file) //for single file
+    --//console.log(req.files) //for multiple file
+    --use enctype="multipart" in <form></form> tag for file(image)
+    --file(image) never stays in database, but in server code "/storage", only route of file stays in db
+    --aws S3 bucket came for separate storing
+    --cloudinary- give 512 mb free
+    --digital ocean spaces is premium, give folder to store file
+---------
+11. 
+

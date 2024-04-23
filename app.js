@@ -11,6 +11,11 @@ app.set('view engine','ejs') //set ui render to ejs
 app.use(express.json())
 app.use(express.urlencoded({extended: true})) //this shows posted data in console instead of undefined
 
+const {multer, storage}= require('./middleware/multerConfig') //import using require
+const upload = multer({storage:storage}) //using function to connect to storage
+//------------------
+
+
 //get part
 app.get('/',(req,res)=>{
     // console.log(req)
@@ -47,7 +52,9 @@ app.get('/blog/edit',(req,res)=>{
 })
 
 //post operation
-app.post('/blog', async(req,res)=>{ //for posting form data
+app.post('/blog', upload.single('image'), async(req,res)=>{ //for posting form data// upload is middleware code and asyc create is main function
+    //use upload.array for multiple file
+    //image is same value in name field of image tag
     // console.log(req.body) //for data in object in console, terminal
     
     //showing data of form and holding them
@@ -60,11 +67,16 @@ app.post('/blog', async(req,res)=>{ //for posting form data
     const {title, subtitle,description}= req.body
     console.log(title, subtitle, description)
     
+    //console.log(req.body) //to check in console
+    console.log(req.file) //for single file
+    //console.log(req.files) //for multiple file
+
     //accessing db table using db.blogs of index.js
     await blogs.create({ //used await to bypass delay and added async in app.post
         title: title, //in js, if two value is same in key value pair, write one title only
         subTitle:subtitle,
-        description:description
+        description:description,
+        imageUrl: req.file.filename //file part url to store in db
     })
     // res.send("Blog created successfully")
     res.redirect('/') //redirect
